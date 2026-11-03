@@ -4086,6 +4086,105 @@
         padding: 64px 0;
       }
     }
+
+    /* v10 */
+    .q-long {
+      font-size: clamp(22px, 2.2vw, 30px);
+      line-height: 1.3;
+      max-width: 30ch;
+    }
+
+    .hlabel {
+      margin: 22px 0 0;
+      text-align: right;
+      padding-right: 8px;
+      font-size: 12.5px;
+      font-weight: 700;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      color: var(--cyan);
+    }
+
+    .hlabel+.hlogos {
+      margin-top: 10px;
+    }
+
+    .gcell {
+      transition: background .25s ease, color .25s ease;
+    }
+
+    .gcell:hover {
+      background: #0096FF;
+    }
+
+    .gcell:hover .n,
+    .gcell:hover .n small,
+    .gcell:hover .go {
+      color: #fff;
+    }
+
+    .gcell:hover .t {
+      color: rgba(255, 255, 255, .9);
+    }
+
+    .gcell:hover .tile,
+    .gcell:hover .tile.pink {
+      background: rgba(255, 255, 255, .2);
+      color: #fff;
+    }
+
+    .gcell .tile {
+      transition: background .25s ease, color .25s ease;
+    }
+
+    @media (max-width:1023px) {
+      .hlabel {
+        order: -2;
+        text-align: left;
+        padding: 0;
+        margin: 0 0 8px;
+      }
+
+      .hlabel+.hlogos {
+        margin-top: 0;
+      }
+    }
+
+    .book {
+      height: 380px;
+    }
+
+    @media (max-width:1023px) {
+      .book {
+        height: 330px;
+      }
+    }
+
+    @media (max-width:760px) {
+      .book {
+        height: 200px;
+      }
+    }
+
+    /* v11 */
+    .hlabel {
+      font-size: 16px;
+      letter-spacing: .06em;
+    }
+
+    .hero {
+      padding-bottom: 230px;
+    }
+
+    @media (max-width:760px) {
+      .hlabel {
+        font-size: 14px;
+      }
+
+      .hero {
+        padding-bottom: 160px;
+      }
+    }
   </style>
 </head>
 
@@ -4521,8 +4620,6 @@
           <div class="hstage" aria-hidden="true">
             <div class="book" id="book">
               <div class="sheet sh1"><i class="pg p2"></i></div>
-              <div class="sheet sh2"><i class="pg p5"></i></div>
-              <div class="sheet sh3"><i class="pg p4"></i></div>
               <div class="bk">
                 <div class="bk-edge e2"></div>
                 <div class="bk-edge e1"></div>
@@ -4612,6 +4709,7 @@
               </div>
             </div>
           </div>
+          <p class="hlabel">HFS Take 5 Report</p>
           <div class="hlogos"><svg class="qzl" viewBox="0 0 792 96" role="img" aria-label="QualiZeal">
               <use href="#qzlogo" />
             </svg><span class="bar"></span><span class="with">In collaboration with</span><span class="hfs" role="img"
@@ -4752,7 +4850,6 @@
               <p class="resp-note"><svg class="ic" aria-hidden="true">
                   <use href="#i-lightbulb" />
                 </svg><span id="respNote"></span></p>
-              <div class="tbl-wrap" id="respTable" hidden></div>
             </div>
           </div>
         </div>
@@ -4760,10 +4857,6 @@
           <span><svg class="ic" aria-hidden="true">
               <use href="#i-map-pin" />
             </svg> All 101 respondents lead teams at US enterprises. Shares are rounded.</span>
-          <button class="linkbtn" id="tblToggle" aria-expanded="false" aria-controls="respTable"><svg class="ic"
-              aria-hidden="true">
-              <use href="#i-table-2" />
-            </svg> <span>View as table</span></button>
         </div>
       </div>
     </section>
@@ -4812,8 +4905,8 @@
                 <h4><svg class="qzl" viewBox="0 0 792 96" role="img" aria-label="QualiZeal">
                     <use href="#qzlogo" />
                   </svg><span class="div"></span>Our take</h4>
-                <p>Validation can’t trail deployment. Tests should ship with every model and keep running: behavior
-                  checks, drift alerts and audit-ready evidence.</p>
+                <p>AI governance cannot outpace deployment. Tests should ship with every model and keep running:
+                  behavior checks, drift alerts and audit-ready evidence.</p>
               </aside>
             </div>
           </div>
@@ -4858,8 +4951,8 @@
                 <h4><svg class="qzl" viewBox="0 0 792 96" role="img" aria-label="QualiZeal">
                     <use href="#qzlogo" />
                   </svg><span class="div"></span>Our take</h4>
-                <p>Ownership is the first control. Name one independent function with the authority, tools and budget to
-                  stop a release.</p>
+                <p>Ownership is the first control. A clear, named owner with go/no-go decision authority closes the
+                  accountability gap before AI moves into production.</p>
               </aside>
             </div>
           </div>
@@ -4915,8 +5008,8 @@
                 <h4><svg class="qzl" viewBox="0 0 792 96" role="img" aria-label="QualiZeal">
                     <use href="#qzlogo" />
                   </svg><span class="div"></span>Our take</h4>
-                <p>AI needs tests that judge behavior, not just outputs: scenario libraries, adversarial probes and
-                  thresholds that run continuously.</p>
+                <p>Prioritize purpose-built testing and critical trust attributes—bias, explainability, and regulatory
+                  evidence over generic accuracy evidence.</p>
               </aside>
             </div>
           </div>
@@ -5031,8 +5124,7 @@
                 <h4><svg class="qzl" viewBox="0 0 792 96" role="img" aria-label="QualiZeal">
                     <use href="#qzlogo" />
                   </svg><span class="div"></span>Our take</h4>
-                <p>Fund AI assurance as its own line, or bring in a partner and platform that make the bigger scope
-                  affordable.</p>
+                <p>Fund the QE mandate to match its extended scope with matching resources.</p>
               </aside>
             </div>
           </div>
@@ -5041,22 +5133,23 @@
     </div>
 
     <!-- =================== QUALIZEAL LEADER QUOTE =================== -->
-    <!-- DRAFT copy: replace with Pradeep Govindasamy's approved quote and headshot before publishing -->
+    <!-- Add Pradeep Govindasamy's approved headshot in place of the PG initials -->
     <section class="sec sec-white" id="ceo-quote">
       <div class="wrap">
         <div class="bl">
           <div class="qcol">
-            <p class="quote q-static">Enterprises don’t lack AI ambition. They lack <span class="hl">proof</span>.
-              Quality engineering now has to become <span class="hl">trust engineering</span>, with evidence that holds
-              up for every model and every release.</p>
+            <p class="quote q-static q-long">Enterprise AI has already crossed the <span class="hl">production
+                threshold</span>. With GenAI systems live in more than half of organizations, and agentic systems with
+              real autonomy deployed in over a third of surveyed companies, quality and governance remain largely stuck
+              in <span class="hl">pilot mode</span>.</p>
           </div>
           <div class="bl-side">
             <div class="cite big"><span class="av" aria-hidden="true">PG</span>
               <div><b>Pradeep Govindasamy</b><span>President &amp; CEO, QualiZeal</span></div>
             </div>
-            <p class="bl-note">QualiZeal’s ValidAIte™ helps enterprises measure AI trust, safety and compliance
-              readiness, release by release.</p>
-            <span class="draft-tag">Draft quote · pending approval</span>
+            <p class="bl-note">Closing this gap requires treating AI assurance as a distinct discipline that combines
+              deep Quality Engineering foundations with the platforms, methods, and continuous evaluation needed to
+              demonstrate trust at scale.</p>
           </div>
         </div>
       </div>
@@ -5511,7 +5604,7 @@
         },
         industry: {
           note: 'Nine industries, none more than <strong>15%</strong> of the sample.',
-          g: [['Insurance', 15, DEEP], ['Healthcare and Life Sciences', 15, BLUE], ['Airlines and Cruise Lines', 15, CYAN], ['Banking, Capital Markets', 15, '#7FD3F2'], ['Hospitality', 11, '#FFC247'], ['Oil, Energy and Utilities', 10, '#9B7BFF'], ['Retail and Consumer Goods', 10, '#2DD4A7'], ['Automotive and Manufacturing', 5, PINK], ['Telecom, Media and Entertainment', 5, '#F98EA0']]
+          g: [['Insurance (P&C, Life, Annuity)', 15, DEEP], ['Healthcare and Life Sciences', 15, BLUE], ['Airlines and Cruise Lines', 15, CYAN], ['Banking, Capital Markets', 15, '#7FD3F2'], ['Hospitality', 11, '#FFC247'], ['Oil, Energy and Utilities', 10, '#9B7BFF'], ['Retail and Consumer Goods', 10, '#2DD4A7'], ['Automotive and Manufacturing', 5, PINK], ['Telecom, Media and Entertainment', 5, '#F98EA0']]
         },
         qe: {
           note: '<strong>40%</strong> run a hybrid center of excellence. Only <strong>8%</strong> have no dedicated QE.',
@@ -5528,7 +5621,7 @@
       once($$('[data-count]'), countUp, .6);
 
       /* ---------- respondent field ---------- */
-      const field = $('#field'), legend = $('#legend'), note = $('#respNote'), tbl = $('#respTable');
+      const field = $('#field'), legend = $('#legend'), note = $('#respNote');
       for (let i = 0; i < 101; i++) { const d = document.createElement('span'); d.className = 'dot'; field.appendChild(d); }
       const dots = $$('.dot', field);
       let curTab = 'role';
@@ -5539,7 +5632,6 @@
         dots.forEach((d, j) => { d.dataset.g = map[j]; d.style.transitionDelay = (stagger && !RM) ? (j * 6) + 'ms' : '0ms'; d.style.backgroundColor = g[map[j]][2]; d.style.filter = `brightness(${(0.86 + ((j * 37) % 17) / 100).toFixed(2)})`; });
         legend.innerHTML = g.map((r, gi) => `<li><button type="button" data-g="${gi}"><span class="sw" style="background:${r[2]}"></span><span>${r[0]}</span><span class="pc">${r[1]}%</span></button></li>`).join('');
         note.innerHTML = D[tab].note;
-        tbl.innerHTML = '<table class="tbl"><thead><tr><th>' + ({ role: 'Role', revenue: 'Annual revenue', industry: 'Industry', qe: 'QE structure' })[tab] + '</th><th>Share of respondents</th></tr></thead><tbody>' + g.map(r => `<tr><td>${r[0]}</td><td>${r[1]}%</td></tr>`).join('') + '</tbody></table>';
         $$('button', legend).forEach(b => {
           const on = () => { field.classList.add('dim'); dots.forEach(d => d.classList.toggle('on', d.dataset.g === b.dataset.g)); b.classList.add('on'); };
           const off = () => { field.classList.remove('dim'); dots.forEach(d => d.classList.remove('on')); b.classList.remove('on'); };
@@ -5550,7 +5642,6 @@
       once([field], () => paint(curTab, true), .3);
       const rtabs = $$('.tabs[aria-label="Group respondents by"] button');
       rtabs.forEach(b => b.addEventListener('click', () => { rtabs.forEach(x => x.setAttribute('aria-selected', x === b)); curTab = b.dataset.tab; paint(curTab, true); }));
-      $('#tblToggle').addEventListener('click', e => { const b = e.currentTarget, open = tbl.hidden; tbl.hidden = !open; b.setAttribute('aria-expanded', open); $('span', b).textContent = open ? 'Hide table' : 'View as table'; });
 
       /* ---------- charts ---------- */
       function bars(el, rows, max = 100) {
